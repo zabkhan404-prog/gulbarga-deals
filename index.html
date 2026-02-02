@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gulbarga Deals | Ramzan Special</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* HEADER */
+    .header {
+      margin: 15px;
+      padding: 25px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      color: white;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .header p {
+      margin-top: 8px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* CATEGORIES */
+    .section-title {
+      margin: 20px 15px 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 0 15px;
+    }
+
+    .category {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .coming {
+      opacity: 0.5;
+    }
+
+    /* RESTAURANTS GRID */
+    .restaurants {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 15px;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 160px;
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-name {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 8px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .close {
+      text-align: right;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal a {
+      display: block;
+      margin-top: 10px;
+      color: #ee0979;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Gulbarga Deals</h1>
+    <p>Best Ramzan & Iftar Offers Near You</p>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="section-title">Categories</div>
+  <div class="categories">
+    <div class="category">🍽 Restaurants</div>
+    <div class="category coming">☕ Cafes</div>
+    <div class="category coming">🛍 Shopping</div>
+  </div>
+
+  <!-- RESTAURANTS -->
+  <div class="section-title">Restaurants</div>
+  <div class="restaurants">
+
+    <div class="card" onclick="openModal()">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" />
+      <div class="card-name">Royal Biryani House</div>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <div class="close" onclick="closeModal()">✖</div>
+      <h2>Royal Biryani House</h2>
+      <p><b>Menu:</b> Chicken Biryani, Haleem, Kebabs</p>
+      <p><b>Ramzan Offer:</b> Iftar Combo @ ₹199</p>
+      <a href="tel:9876543210">📞 Call: 9876543210</a>
+      <a href="https://maps.google.com" target="_blank">📍 View Location</a>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("modal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
